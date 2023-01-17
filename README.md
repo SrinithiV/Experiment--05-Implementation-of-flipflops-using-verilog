@@ -180,30 +180,38 @@ endmodule
 ### RTL LOGIC FOR FLIPFLOPS 
 
 SR FLIP FLOP :
+
 ![](/rtl1.png)
 
 D FLIP FLOP :
+
 ![](/dtd.jpg)
 
 JK FLIP FLOP :
+
 ![](/rtl2.png)
 
 T FLIP FLOP :
+
 ![](/rtl4.jpg)
 
 
 ### TIMING DIGRAMS FOR FLIP FLOPS 
 
 SR FLIP FLOP :
+
 ![](/td1.jpg)
 
 D FLIP FLOP :
+
 ![](/td3.jpg)
 
 JK FLIP FLOP :
+
 ![](/TD2.jpg)
 
 T FLIP FLOP :
+
 ![](/td4.jpg)
 
 
