@@ -1,5 +1,6 @@
 # Experiment--05-Implementation-of-flipflops-using-verilog
-### AIM: To implement all the flipflops using verilog and validating their functionality using their functional tables
+### AIM:
+ To implement all the flipflops using verilog and validating their functionality using their functional tables
 ### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
 ### SOFTWARE REQUIRED:   Quartus prime
 ### THEORY 
@@ -102,39 +103,110 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ⇒Q(t+1)=T⊕Q(t)
 
 ### Procedure
-/* write all the steps invloved */
 
+Step 1 : Open Quartus II and select new project and choose the file location.
 
+Step 2 : Module Declaration. Module should have the file name.
+
+Step 3 : Use assign declaration and wire to define the functionality of logic circuits.
+
+Step 4 : At the end give endmodule.
+
+Step 5 : Run the program and choose RTL viewer to get RTL realization.
+
+Step 6 : Do the timing diagram.
+
+Step 7 : Stop the program.
 
 ### PROGRAM 
-/*
+
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
 
+Developed by : SRINITHI V
 
+RegisterNumber : 22006082
 
+SR FLIP FLOP :
+```
+module SR(s,r,clk,q,qbar);
+input s,r,clk;
+output q,qbar;
+wire x,y;
+nand(x,s,clk);
+nand(y,r,clk);
+nand(q,x,qbar);
+nand(qbar,y,q);
+endmodule
+```
+D FLIP FLOP :
+```
+module D(d,clk,q,qbar);
+input d,clk;
+output q,qbar;
+assign dbar=~d;
+wire x,y;
+nand (x,d,clk);
+nand (y,dbar,clk);
+nand (q,x,qbar);
+nand (qbar,y,q);
+endmodule
+```
 
-
+JK FLIP FLOP :
+```
+module JK(j,k,clk,q,qbar);
+input j,k,clk;
+output q,qbar;
+wire x,y;
+nand(x,j,clk,qbar);
+nand(y,k,clk,q);
+nand(q,x,qbar);
+nand(qbar,y,q);
+endmodule
+```
+T FLIP FLOP :
+```
+module T(t,clk,q,qbar);
+input t,clk;
+output q,qbar;
+wire s,r;
+nand (s,t,clk,qbar);
+nand (r,t,clk,q);
+nand (q,s,qbar);
+nand (qbar,r,q);
+endmodule
+```
 
 ### RTL LOGIC FOR FLIPFLOPS 
 
+SR FLIP FLOP :
+![](/rtl1.png)
 
+D FLIP FLOP :
+![](/dtd.jpg)
 
+JK FLIP FLOP :
+![](/rtl2.png)
 
-
-
-
+T FLIP FLOP :
+![](/rtl4.jpg)
 
 
 ### TIMING DIGRAMS FOR FLIP FLOPS 
 
+SR FLIP FLOP :
+![](/td1.jpg)
 
+D FLIP FLOP :
+![](/td3.jpg)
 
+JK FLIP FLOP :
+![](/TD2.jpg)
 
-
-
+T FLIP FLOP :
+![](/td4.jpg)
 
 
 ### RESULTS 
+
+Thus, the program for flipflops is implemented and its functional table is successfully verified in quartus using Verilog programming.
